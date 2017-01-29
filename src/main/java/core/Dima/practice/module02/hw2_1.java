@@ -1,4 +1,4 @@
-package core.module02;
+package core.Dima.practice.module02;
 
 public class hw2_1 {
     public static void main(String[] args) {

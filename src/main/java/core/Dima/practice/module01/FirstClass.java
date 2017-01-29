@@ -1,4 +1,4 @@
-package core.module01;
+package core.Dima.practice.module01;
 
 public class FirstClass {
 
