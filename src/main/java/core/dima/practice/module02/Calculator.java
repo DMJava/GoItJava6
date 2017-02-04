@@ -1,11 +1,14 @@
 package core.dima.practice.module02;
 
+import java.util.Arrays;
+
 public class Calculator {
     public static void main(String[] args) {
 
         int[] array = {10, 21, -5, 8, -3, 2, 1, 12, 4, 32};
+//        int[] array = {-5, -6, -3, -15};
         double[] array2 = {12.6, 7.3, 2.1, -3.2, -4.2, 0.0, 5.5, 8.4, 16.1, 3.3};
-
+//        double[] array2 = {-2.2, -3.5, -9.5, -7.7};
         Calculator calculator = new Calculator();
         calculator.sum(array);
         calculator.max(array);
@@ -51,11 +54,11 @@ public class Calculator {
 
     public void maxPositive(int[] array) {
         int maxPositive = 0;
-        for (int pos : array) {
-            if (pos > 0 && maxPositive < pos)
-                maxPositive = pos;
+        for (int nums : array) {
+            if (nums > 0 && maxPositive < nums)
+                maxPositive = nums;
         }
-        System.out.println("Максимальное позитивное число массива = " + maxPositive);
+        System.out.println("Максимальное позитивное число массива: " + maxPositive);
     }
 
     public void multiplication(int[] array) {
@@ -67,7 +70,11 @@ public class Calculator {
     }
 
     public void modulusOfFirstAndLastElement(int[] array) {
-        System.out.println("Модуль первого и последнего элементов в массиве = " + Math.abs(array[0]) + " и " + Math.abs(array[9]));
+        int first = array[0];
+        int last = array.length - 1;
+        Math.abs(first);
+        Math.abs(last);
+        System.out.println("Модуль первого и последнего элементов в массиве = " + first + " и " + last);
     }
 
     public void secondLargestElement(int[] array) {
@@ -111,13 +118,14 @@ public class Calculator {
     }
 
     public void maxPositive(double[] array2) {
-        double maxPos = 0;
-        for (double numbers : array2) {
-            if (numbers > 0 && maxPos < numbers)
-                maxPos = numbers;
+        double maxPositive = 0;
+        for (double num : array2) {
+            if (num > 0 && maxPositive < num)
+                maxPositive = num;
         }
-        System.out.println("Максимальное позитивное число массива = " + maxPos);
+        System.out.println("Максимальное позитивное число массива: " + maxPositive);
     }
+
 
     public void multiplication(double[] array2) {
         double multiply = 1;
@@ -128,7 +136,11 @@ public class Calculator {
     }
 
     public void modulusOfFirstAndLastElement(double[] array2) {
-        System.out.println("Модуль первого и последнего элементов в массиве = " + Math.abs(array2[0]) + " и " + Math.abs(array2[9]));
+        double first = array2[0];
+        double last = array2.length - 1;
+        Math.abs(first);
+        Math.abs(last);
+        System.out.println("Модуль первого и последнего элементов в массиве = " + first + " и " + last);
     }
 
     public void secondLargestElement(double[] array2) {
