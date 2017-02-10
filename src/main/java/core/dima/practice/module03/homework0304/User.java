@@ -1,4 +1,4 @@
-package core.dima.practice.module03;
+package core.dima.practice.module03.homework0304;
 
 public class User {
     String name;

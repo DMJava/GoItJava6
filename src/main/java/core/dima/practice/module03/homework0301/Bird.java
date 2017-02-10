@@ -1,4 +1,4 @@
-package core.dima.practice.module03;
+package core.dima.practice.module03.homework0301;
 
 public class Bird {
     public static void main(String[] args) {
