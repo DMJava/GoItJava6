@@ -1,12 +1,16 @@
 package core.dima.practice.module03.homework0304;
 
 public class User {
-    String name;
-    int balance;
-    int monthsOfEmployment;
-    String companyName;
-    int salary;
-    String currency;
+    private String name;
+    private int balance;
+    private int monthsOfEmployment;
+    private String companyName;
+    private int salary;
+    private String currency;
+
+    double commission5 = 0.95;
+    double comission10 = 0.90;
+
 
     public User(String name, int balance, int monthsOfEmployment, String companyName, int salary, String currency) {
         this.name = name;
@@ -19,24 +23,28 @@ public class User {
 
     void paySalary() {
         this.balance += this.salary;
+        System.out.println("The balance after receipt of salary: " + balance);
     }
 
     void withdraw(int summ) {
         if (summ < 1000) {
-            this.balance -= ((int) (summ * 0.95));
+            this.balance -= ((int) (summ * commission5));
         } else {
-            this.balance -= ((int) (summ * 0.90));
+            this.balance -= ((int) (summ * comission10));
         }
+        System.out.println("The balance after withdraw: " + balance);
     }
 
-    public int companyNameLenght() {
-        return this.companyName.length();
+    void companyNameLenght() {
+        System.out.println(this.companyName.length());
     }
 
-    public int monthIncreaser(int addMonth) {
-        return this.monthsOfEmployment += addMonth;
+    void monthIncreaser(int addMonth) {
+        System.out.println(this.monthsOfEmployment += addMonth);
     }
 
+
+    //  мутаторы и аксессоры))
     public String getName() {
         return name;
     }

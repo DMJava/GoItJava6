@@ -6,6 +6,9 @@ public class CollegeStudent extends Student {
     private int rating;
     private long id;
 
+    public CollegeStudent() {
+    }
+
     public CollegeStudent(String firstName, String lastName, int group) {
         super(firstName, lastName, group);
     }
@@ -14,8 +17,7 @@ public class CollegeStudent extends Student {
         super(lastName, coursesTaken);
     }
 
-    public CollegeStudent(String lastName, Course[] coursesTaken, String collegeName, int rating, long id) {
-        super(lastName, coursesTaken);
+    public CollegeStudent(String collegeName, int rating, long id) {
         this.collegeName = collegeName;
         this.rating = rating;
         this.id = id;

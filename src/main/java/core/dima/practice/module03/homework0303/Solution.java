@@ -21,7 +21,7 @@ public class Solution {
         coursesTaken[3] = course3;
         coursesTaken[4] = course4;
 
-        SpecialStudent specialStudent = new SpecialStudent("Egor", coursesTaken, 45986865);
+        SpecialStudent specialStudent = new SpecialStudent("Viktor", "Popov", 23);
 
         Student student = new Student("A", "B", 9);
         Student student1 = new Student("ZZ", coursesTaken);
@@ -30,6 +30,6 @@ public class Solution {
 
         CollegeStudent collegeStudent = new CollegeStudent("YAYA", "Toure", 4);
         CollegeStudent collegeStudent2 = new CollegeStudent("Kotov",coursesTaken);
-        CollegeStudent collegeStudent3 = new CollegeStudent("Enotov",coursesTaken,"Univer", 25, 456321987);
+        CollegeStudent collegeStudent3 = new CollegeStudent("Enotov",coursesTaken);
     }
 }
