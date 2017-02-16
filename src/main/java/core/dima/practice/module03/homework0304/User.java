@@ -8,8 +8,8 @@ public class User {
     private int salary;
     private String currency;
 
-    double commission5 = 0.95;
-    double comission10 = 0.90;
+    private double commission5 = 0.95;
+    private double comission10 = 0.90;
 
 
     public User(String name, int balance, int monthsOfEmployment, String companyName, int salary, String currency) {
