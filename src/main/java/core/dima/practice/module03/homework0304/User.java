@@ -8,8 +8,8 @@ public class User {
     private int salary;
     private String currency;
 
-    private double commission5 = 0.95;
-    private double comission10 = 0.90;
+    public static final double FIVE_PERCENT_COMMISSION = 0.95;
+    public static final double TEN_PERCENT_COMMISSION = 0.90;
 
 
     public User(String name, int balance, int monthsOfEmployment, String companyName, int salary, String currency) {
@@ -28,9 +28,9 @@ public class User {
 
     void withdraw(int summ) {
         if (summ < 1000) {
-            this.balance -= ((int) (summ * commission5));
+            this.balance -= ((int) (summ * FIVE_PERCENT_COMMISSION));
         } else {
-            this.balance -= ((int) (summ * comission10));
+            this.balance -= ((int) (summ * TEN_PERCENT_COMMISSION));
         }
         System.out.println("The balance after withdraw: " + balance);
     }
