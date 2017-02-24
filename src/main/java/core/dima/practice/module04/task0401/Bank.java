@@ -85,7 +85,7 @@ public abstract class Bank {
 
     public abstract int getCommission(int summ);
 
-    double moneyPaidMonthlyForSalary() {
-        return 0;
+    public double moneyPaidMonthlyForSalary() {
+        return getAvrSalaryOfEmployee() * getNumberOfEmployees();
     }
 }
