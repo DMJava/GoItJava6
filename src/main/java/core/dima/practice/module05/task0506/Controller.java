@@ -1,10 +1,10 @@
-package core.dima.practice.module5.task0506;
+package core.dima.practice.module05.task0506;
 
-import core.dima.practice.module5.task0501.Room;
-import core.dima.practice.module5.task0503.API;
-import core.dima.practice.module5.task0504.BookingComAPI;
-import core.dima.practice.module5.task0504.GoogleAPI;
-import core.dima.practice.module5.task0504.TripAdvisorAPI;
+import core.dima.practice.module05.task0501.Room;
+import core.dima.practice.module05.task0503.API;
+import core.dima.practice.module05.task0504.BookingComAPI;
+import core.dima.practice.module05.task0504.GoogleAPI;
+import core.dima.practice.module05.task0504.TripAdvisorAPI;
 
 public class Controller {
     private API apis[] = new API[3];

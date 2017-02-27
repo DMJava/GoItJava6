@@ -1,6 +1,5 @@
-package core.dima.practice.module5.task0501;
+package core.dima.practice.module05.task0501;
 
-import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class Room {

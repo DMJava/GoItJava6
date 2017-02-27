@@ -1,6 +1,6 @@
-package core.dima.practice.module5.task0505;
+package core.dima.practice.module05.task0505;
 
-import core.dima.practice.module5.task0501.Room;
+import core.dima.practice.module05.task0501.Room;
 
 public class DAOImpl implements DAO {
 
