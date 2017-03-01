@@ -14,7 +14,7 @@ public class DAOImpl implements DAO {
         this.rooms = rooms;
     }
 
-    @Override
+
     public Room save(Room room) {
         for (int i = 0; i < rooms.length; i++) {
             if (rooms[i] == null) {
@@ -26,7 +26,7 @@ public class DAOImpl implements DAO {
         return room;
     }
 
-    @Override
+
     public boolean delete(Room room) {
         boolean delete = false;
         for (int i = 0; i < rooms.length; i++) {
@@ -39,7 +39,7 @@ public class DAOImpl implements DAO {
         return delete;
     }
 
-    @Override
+
     public Room update(Room room) {
         for (int i = 0; i < rooms.length; i++) {
             if (rooms[i].equals(room)) {
@@ -50,7 +50,7 @@ public class DAOImpl implements DAO {
         return room;
     }
 
-    @Override
+
     public Room findById(long id) {
         for (int i = 0; i < rooms.length; i++) {
             if (rooms[i].getId() == id) {

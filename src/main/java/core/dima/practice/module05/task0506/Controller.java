@@ -23,39 +23,44 @@ public class Controller {
         apis[2] = new BookingComAPI();
     }
 
-    Room[] requestRooms(int price, int persons, String city, String hotel) {
-
-        Room[] requestRooms = new Room[15];
+    public Room[] requestRooms(int price, int persons, String city, String hotel) {
+        Room compareRoom = new Room(price, persons, hotel, city);
+        Room[] resultRooms = new Room[15];
 
         for (int i = 0; i < apis.length; i++) {
             Room[] rooms = apis[i].getRooms();
 
             for (int j = 0; j < rooms.length; j++) {
-                if (rooms[j].getPrice() == price && rooms[j].getPersons() == persons && rooms[j].getCityName().equals(city) && rooms[j].getHotelName().equals(hotel)) {
+                if (rooms[j].equals(compareRoom)) {
 
-                    for (int k = 0; k < requestRooms.length; k++) {
-                        if (requestRooms[k] == null) {
-                            requestRooms[k] = rooms[j];
+                    for (int k = 0; k < resultRooms.length; k++) {
+                        if (resultRooms[k] == null) {
+                            resultRooms[k] = rooms[j];
+                            break;
                         }
                     }
                 }
             }
         }
-        return requestRooms;
+        return resultRooms;
     }
 
-    Room[] check(API api1, API api2) {
+   public Room[] check(API api1, API api2) {
 
-        for (int i = 0; i < apis.length; i++) {
-
-            Room[] rooms = apis[i].getRooms();
-
-            if (rooms[i].equals(api1) && rooms[i].equals(api2)) {
-
-                System.out.println("Количество одинаковых номеров в двух API: " + rooms[i]);
+        Room[] sameRooms = new Room[10];
+        for (int i = 0; i < api1.getRooms().length; i++) {
+            for (int j = 0; j < api2.getRooms().length; j++) {
+                if (api1.getRooms()[i].equals(api2.getRooms()[j])) {
+                    sameRooms[0] = api1.getRooms()[i];
+                    for (int k = 0; k < sameRooms.length; k++) {
+                        if (sameRooms[k] == null) {
+                            sameRooms[k] = api1.getRooms()[i];
+                            break;
+                        }
+                    }
+                }
             }
         }
-        return check(api1, api2);
+        return sameRooms;
     }
-
 }

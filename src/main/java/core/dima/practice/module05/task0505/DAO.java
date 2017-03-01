@@ -3,11 +3,13 @@ package core.dima.practice.module05.task0505;
 import core.dima.practice.module05.task0501.Room;
 
 public interface DAO {
-    public Room save(Room room);
 
-    public boolean delete(Room room);
 
-    public Room update(Room room);
+     Room save(Room room);
 
-    public Room findById(long id);
+     boolean delete(Room room);
+
+     Room update(Room room);
+
+     Room findById(long id);
 }
