@@ -74,6 +74,16 @@ public final class ArraysUtils {
         System.out.println("Второе по величине число в массиве = " + secondLargest);
     }
 
+    public final static void findEvenElements(int[] array) {
+        System.out.print("Четные числа в массиве: ");
+        for (int anArray : array) {
+            if (anArray % 2 == 0) {
+                System.out.print(anArray + " ");
+            }
+        }
+        System.out.println();
+    }
+
 
     public final static void reverse(int[] array) {
         int i = 0;
@@ -89,16 +99,6 @@ public final class ArraysUtils {
         System.out.print("Массив задом наперед: ");
         for (int anArray : array) {
             System.out.print(anArray + " ");
-        }
-        System.out.println("");
-    }
-
-    public final static void findEvenElements(int[] array) {
-        System.out.println("Четные числа в массиве: ");
-        for (int anArray : array) {
-            if (anArray % 2 == 0) {
-                System.out.print(anArray + " ");
-            }
         }
     }
 }

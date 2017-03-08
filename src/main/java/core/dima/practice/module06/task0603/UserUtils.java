@@ -5,8 +5,8 @@ import core.dima.practice.module06.task0602.User;
 public class UserUtils {
 
 
-    User[] uniqueUsers(User[] users) {
-        User[] result = new User[7];
+   public static User[] uniqueUsers(User[] users) {
+        User[] result = new User[users.length];
         for (int i = 0; i < users.length; i++) {
 
 
