@@ -104,9 +104,9 @@ public final class ArraysUtils {
         int j = arrayCopy.length - 1;
         int tmp;
         while (j > i) {
-            tmp = array[j];
-            array[j] = array[i];
-            array[i] = tmp;
+            tmp = arrayCopy[j];
+            arrayCopy[j] = arrayCopy[i];
+            arrayCopy[i] = tmp;
             j--;
             i++;
         }
