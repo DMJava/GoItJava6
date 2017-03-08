@@ -1,6 +1,11 @@
 package core.dima.practice.module06.task0601;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public final class ArraysUtils {
+    private ArraysUtils() {
+    }
 
     public final static void printSumOfArray(int[] array) {
         int arraySum = 0;
@@ -85,9 +90,18 @@ public final class ArraysUtils {
     }
 
 
-    public final static void reverse(int[] array) {
+    public final static int[] reverse(int[] array) {
+
+
+// 2       arrayCopy = Arrays.copyOf(array,);
+// 1       int[] arrayCopy = array.clone();
+
+        int [] arrayCopy = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            arrayCopy[i] = array[i];
+        }
         int i = 0;
-        int j = array.length - 1;
+        int j = arrayCopy.length - 1;
         int tmp;
         while (j > i) {
             tmp = array[j];
@@ -97,8 +111,9 @@ public final class ArraysUtils {
             i++;
         }
         System.out.print("Массив задом наперед: ");
-        for (int anArray : array) {
+        for (int anArray : arrayCopy) {
             System.out.print(anArray + " ");
         }
+        return arrayCopy;
     }
 }
