@@ -80,4 +80,14 @@ public final class User {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", salary=" + salary +
+                ", balance=" + balance +
+                '}';
+    }
 }
