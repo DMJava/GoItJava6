@@ -52,11 +52,11 @@ public class Main {
         }
         System.out.println("--------------заказ с наибольшей ценой, используя только один сет-метод - get-----------------");
 
-//        for (int i = 0; i < orders.size(); i++) {
-//            if (orders.contains(new Order(8531, 3000, Currency.UAH, "ATB", "VVV", user9))) {
-//                System.out.println(orders);
-//            }
-//        }
+
+        int index = 0;
+        Object orderWanted = orders.toArray()[index];
+        System.out.println(orderWanted);
+
 
         System.out.println("---------------удалите заказы, где валюта доллар, используя Iterator------------------------------");
 
