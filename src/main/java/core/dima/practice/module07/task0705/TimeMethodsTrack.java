@@ -9,31 +9,32 @@ public class TimeMethodsTrack {
     List<Integer> intLinkList = new LinkedList<Integer>();
     List<String> strLinkList = new LinkedList<String>();
 
-    void addArIntList() {
+
+    public void addArIntList() {
         for (int i = 0; i < 1000; i++) {
             intList.add(intList.size() / 2, 10);
         }
     }
 
-    void addArStrList() {
+    public void addArStrList() {
         for (int i = 0; i < 1000; i++) {
             strList.add(strList.size() / 2, String.valueOf(10));
         }
     }
 
-    void addIntLinkList(){
+    public void addIntLinkList() {
         for (int i = 0; i < 1000; i++) {
             intLinkList.add(intLinkList.size() / 2, 10);
         }
     }
 
-    void addStrLinkList(){
+    public void addStrLinkList() {
         for (int i = 0; i < 1000; i++) {
             strLinkList.add(strLinkList.size() / 2, String.valueOf(10));
         }
     }
 
-    void info() {
+    public void info() {
         System.out.println(intList.size() + " " + strList.size() + " " + intLinkList.size() + " " + strLinkList.size());
 
     }

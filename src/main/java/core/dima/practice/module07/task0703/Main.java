@@ -50,28 +50,25 @@ public class Main {
                 System.out.println(order);
             }
         }
-        System.out.println("--------------заказ с наибольшей ценой, исспользуя только один сет-метод - get-----------------");
-
-        Iterator<Order> it = orders.iterator();
-        while (it.hasNext()) {
-            System.out.println(it.next());
-        }
+        System.out.println("--------------заказ с наибольшей ценой, используя только один сет-метод - get-----------------");
 
 //        for (int i = 0; i < orders.size(); i++) {
 //            if (orders.contains(new Order(8531, 3000, Currency.UAH, "ATB", "VVV", user9))) {
 //                System.out.println(orders);
 //            }
 //        }
+
         System.out.println("---------------удалите заказы, где валюта доллар, используя Iterator------------------------------");
 
-        for (Order o : orders) {
-            if (o.getCurrency().equals(USD)) {
-                Iterator<Order> iterator = orders.iterator();
-                while (iterator.hasNext()) {
-                    iterator.remove();
-                    System.out.println(o);
 
-                }
+        Iterator<Order> iterator = orders.iterator();
+        Order order;
+        while (iterator.hasNext()) {
+            order = iterator.next();
+            if (order.getCurrency().equals(USD)) {
+                System.out.println(order.getCurrency() + " " + " Deleted ");
+                iterator.remove();
+                System.out.println(order);
             }
         }
     }

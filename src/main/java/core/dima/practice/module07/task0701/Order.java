@@ -45,7 +45,9 @@ public class Order{
     @Override
     public String toString() {
         return "Order{" +
-                "price=" + price +
+                "id=" + id +
+                ", price=" + price +
+                ", currency=" + currency +
                 ", itemName='" + itemName + '\'' +
                 ", shopIdentificator='" + shopIdentificator + '\'' +
                 ", user=" + user +

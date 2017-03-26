@@ -21,7 +21,7 @@ public class Main {
         User user9 = new User(5785, "Vera", "AZAZAZAZ", "Kiev", 22000);
         User user10 = new User(3333, "Nina", "OOOOO", "Lvov", 150000);
 
-        final List<Order> orders = new ArrayList<Order>();
+        List<Order> orders = new ArrayList<Order>();
         orders.add(new Order(4565, 1500, Currency.USD, "Iphone", "AAA", user));
         orders.add(new Order(4565, 1700, Currency.UAH, "Samsung", "BBB", user2));
         orders.add(new Order(4565, 110, Currency.UAH, "Delf", "CCC", user3));
