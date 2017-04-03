@@ -57,6 +57,11 @@ public class Main {
         Object orderWanted = orders.toArray()[index];
         System.out.println(orderWanted);
 
+//        Integer min = null;
+//        for (Order val : orders){
+//            min = min == null || min.compareTo(val) > 0 ? val : min;
+//        }
+
 
         System.out.println("---------------удалите заказы, где валюта доллар, используя Iterator------------------------------");
 
