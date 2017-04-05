@@ -62,4 +62,13 @@ public class Food {
     public int hashCode() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        return "Food{" +
+                "name='" + name + '\'' +
+                ", country=" + country +
+                ", expiration=" + expiration +
+                '}';
+    }
 }

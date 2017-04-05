@@ -9,6 +9,8 @@ import java.util.*;
 
 public final class IManageSystemImplemetnation<T> implements IManageSystem<Food> {
 
+    final static double DOUBLE = 0.0;
+
     private Map<Food, Double> database = new HashMap<Food, Double>();
 
     @Override
@@ -19,7 +21,7 @@ public final class IManageSystemImplemetnation<T> implements IManageSystem<Food>
 
     @Override
     public Food save(Food obj) {
-        database.put(obj, 0.0);
+        database.put(obj, DOUBLE);
         return obj;
     }
 
@@ -31,11 +33,6 @@ public final class IManageSystemImplemetnation<T> implements IManageSystem<Food>
     @Override
     public void deleteById(int id) {
         Set<Food> food = database.keySet();
-
-//        for (Food o : food){
-//            if (o.getId() == id){
-//                food.remove(id);
-
         for (Iterator<Food> iterator = food.iterator(); iterator.hasNext(); ) {
             if (iterator.next().getId() == id) {
                 iterator.remove();
@@ -78,15 +75,18 @@ public final class IManageSystemImplemetnation<T> implements IManageSystem<Food>
                 return o1.getName().compareTo(o2.getName());
             }
         };
+        List<Food> list = new ArrayList<Food>(database.keySet());
+        Collections.sort(list, comparator);
+        for (Food o : list) {
+            System.out.println(o);
+        }
     }
 
     @Override
     public void printProductsSortedByPrice() {
-//        Comparator<Food> comparator = new Comparator<Food>() {
-//            @Override
-//            public int compare(Food o1, Food o2) {
-////                return null;
-//            }
-//        };
+        List<Map.Entry<Food, Double>> list = new ArrayList<Map.Entry<Food, Double>>(database.entrySet());
+
+
     }
+
 }

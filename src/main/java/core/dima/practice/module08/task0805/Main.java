@@ -7,6 +7,7 @@ import core.dima.practice.module08.task0803.IManageSystem;
 import core.dima.practice.module08.task0804.IManageSystemImplemetnation;
 
 import java.lang.reflect.Method;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,33 +17,55 @@ public class Main {
     public static void main(String[] args) {
 
         IManageSystemImplemetnation<Food> iMsI = new IManageSystemImplemetnation<Food>();
+        iMsI.save(new Food("Apple", UKRAINE, 30));
+        iMsI.save(new Food("Milk", UKRAINE, 50));
+        iMsI.save(new Food("Meat", UKRAINE, 60));
+        iMsI.save(new Food("Broad", USA, 80));
+        iMsI.save(new Food("Oranges", CHINA, 200));
+        iMsI.save(new Food("Rice", CHINA, 200));
+        iMsI.save(new Food("Hijashi", CHINA, 200));
 
-//        iMsI.save(new Apple("Antonovka", UKRAINE, 30));
-//        iMsI.save(new Apple("Gold", ITALY, 50));
-//        iMsI.save(new Apple("Karat", BRAZIL, 60));
-//        iMsI.save(new Apple("Star", USA, 80));
-//        iMsI.save(new Apple("Kunichiuwa", CHINA, 200));
+        iMsI.save(new Food("Mango", BRAZIL, 20));
+        iMsI.save(new Food("Meat", ITALY, 30));
+        iMsI.save(new Food("Eggs", UKRAINE, 20));
+        iMsI.save(new Food("Pipe", USA, 20));
+        iMsI.save(new Food("Melon", CHINA, 20));
+        iMsI.save(new Food("Chockolate", ITALY, 1000));
 
-        System.out.println(iMsI.getPrices());
+        for (Food o : iMsI.getProducts()) {
+            System.out.println(o);
+        }
+        System.out.println("------");
+        iMsI.delete(new Food("Apple", UKRAINE, 30));
+        iMsI.delete(new Food("Oranges", CHINA, 200));
+        iMsI.delete(new Food("Melon", CHINA, 20));
+
+        iMsI.deleteById(1);
+        iMsI.deleteById(30);
+
+        iMsI.get(30);
+        iMsI.get(20);
+
+        iMsI.getPrice(new Food("Melon", CHINA, 20));
+        for (Food o : iMsI.getProducts()) {
+            System.out.println(o);
+        }
+        System.out.println("-------");
+        iMsI.getProducts();
+
+        for (Food o : iMsI.getProducts()) {
+            System.out.println(o);
+        }
+        System.out.println("------");
+        iMsI.getPrices();
+        for (Food o : iMsI.getProducts()) {
+            System.out.println(o);
+        }
+
+        System.out.println("--sortedByName--");
+        iMsI.printProductsSortedByName();
 
 
 
-
-        Apple apple1 = new Apple("Ant", UKRAINE, 30);
-        Apple apple2 = new Apple("Bo", UKRAINE, 30);
-        Apple apple3 = new Apple("Coo", UKRAINE, 30);
-        Apple apple4 = new Apple("Dii", UKRAINE, 30);
-        Apple apple5 = new Apple("EEE", UKRAINE, 30);
-
-
-        Map<Meat,Double> meats = new HashMap<Meat, Double>();
-         meats.put(new Meat("BB", 20.0), 20.0);
-         meats.put(new Meat("AA", 30.0), 30.0);
-         meats.put(new Meat("CC", 40.0), 40.0);
-
-        System.out.println(iMsI.save(Meat));
-
-
-//        iMsI.save(new Meat(300, "a"));
     }
 }
