@@ -25,4 +25,7 @@ public interface IManageSystem<T> {
 
     List<Double> getPrices();
 
+    void printProductsSortedByName(); //выводит список «продукт-цена», отсортированных по имени продукта.
+
+    void printProductsSortedByPrice(); // выводит список «продукт-цена», отсортированных по цене продукта (по возрастанию)
 }

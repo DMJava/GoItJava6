@@ -7,12 +7,9 @@ import java.util.*;
 
 // Поле эмулирует базу данных, содержит в себе данные о продуктах и их цене. Поле должно быть доступно только внутри данного класса.
 
-public final class IManageSystemImplemetnation implements IManageSystem<Food> {
+public final class IManageSystemImplemetnation<T> implements IManageSystem<Food> {
 
     private Map<Food, Double> database = new HashMap<Food, Double>();
-
-// void printProductsSortedByName(); - выводит список «продукт-цена», отсортированных по имени продукта.
-// void printProductsSortedByPrice();- выводит список «продукт-цена», отсортированных по цене продукта (по возрастанию).
 
     @Override
     public Food save(Food obj, double price) {
@@ -46,7 +43,6 @@ public final class IManageSystemImplemetnation implements IManageSystem<Food> {
         }
     }
 
-
     @Override
     public Food get(int id) {
         Set<Food> foods = database.keySet();
@@ -71,5 +67,26 @@ public final class IManageSystemImplemetnation implements IManageSystem<Food> {
     @Override
     public List<Double> getPrices() {
         return new ArrayList<Double>(database.values());
+    }
+
+
+    @Override
+    public void printProductsSortedByName() {
+        Comparator<Food> comparator = new Comparator<Food>() {
+            @Override
+            public int compare(Food o1, Food o2) {
+                return o1.getName().compareTo(o2.getName());
+            }
+        };
+    }
+
+    @Override
+    public void printProductsSortedByPrice() {
+//        Comparator<Food> comparator = new Comparator<Food>() {
+//            @Override
+//            public int compare(Food o1, Food o2) {
+////                return null;
+//            }
+//        };
     }
 }
