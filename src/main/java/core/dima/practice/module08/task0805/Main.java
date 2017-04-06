@@ -26,42 +26,48 @@ public class Main {
         iMsI.save(new Food("Rice", CHINA, 200));
         iMsI.save(new Food("Hijashi", CHINA, 200));
 
-        System.out.println("---------11111---");
+        System.out.println("---------save--ok-");
         iMsI.save(new Food("Apple", UKRAINE, 30), 10.0);
         iMsI.save(new Food("Mango", BRAZIL, 20), 20.0);
         iMsI.save(new Food("Meat", ITALY, 30), 30.0);
-        iMsI.save(new Food("Eggs", UKRAINE, 20),35.0);
-        iMsI.save(new Food("Pipe", USA, 20),40.0);
+        iMsI.save(new Food("Eggs", UKRAINE, 20), 35.0);
+        iMsI.save(new Food("Pipe", USA, 20), 40.0);
         iMsI.save(new Food("Melon", CHINA, 20), 50.0);
         iMsI.save(new Food("Chockolate", ITALY, 1000), 505.0);
 
         for (Food o : iMsI.getProducts()) {
             System.out.println(o);
         }
-        System.out.println("------");
+
+        System.out.println("---delete--ok-");
         iMsI.delete(new Food("Apple", UKRAINE, 30));
         iMsI.delete(new Food("Oranges", CHINA, 200));
         iMsI.delete(new Food("Melon", CHINA, 20));
+        for (Food o : iMsI.getProducts()) {
+            System.out.println(o);
+        }
 
+        System.out.println("---deletedById---");
         iMsI.deleteById(1);
         iMsI.deleteById(30);
 
-        iMsI.get(30);
+        System.out.println("---get---");
+        iMsI.get(1);
         iMsI.get(20);
 
-        iMsI.getPrice(new Food("Melon", CHINA, 20));
-        for (Food o : iMsI.getProducts()) {
-            System.out.println(o);
-        }
-        System.out.println("-------");
-        iMsI.getProducts();
 
+        System.out.println("--getPrice---");
+        System.out.println(iMsI.getPrice(new Food("Melon", CHINA, 20)));
+
+
+        System.out.println("---getProducts---ok-");
         for (Food o : iMsI.getProducts()) {
             System.out.println(o);
         }
-        System.out.println("------");
-        iMsI.getPrices();
-        for (Food o : iMsI.getProducts()) {
+
+
+        System.out.println("---getPrices--ok-");
+        for (Double o : iMsI.getPrices()) {
             System.out.println(o);
         }
 
@@ -70,6 +76,5 @@ public class Main {
 
         System.out.println("--sortedByPrice--");
         iMsI.printProductsSortedByPrice();
-
     }
 }
