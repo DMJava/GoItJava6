@@ -18,6 +18,12 @@ public class Main {
 
         IManageSystemImplemetnation<Food> iMsI = new IManageSystemImplemetnation<Food>();
 
+        int id = IdGenerator.GenerateID("Milk", 50, UKRAINE);
+        int id2 = IdGenerator.GenerateID("Broad", 80, USA);
+        int id3 = IdGenerator.GenerateID("Melon", 20, CHINA);
+        int id4 = IdGenerator.GenerateID("Hijashi", 200, CHINA);
+
+
         iMsI.save(new Food("Apple", UKRAINE, 30));
         iMsI.save(new Food("Milk", UKRAINE, 50));
         iMsI.save(new Food("Meat", UKRAINE, 60));
@@ -47,13 +53,18 @@ public class Main {
             System.out.println(o);
         }
 
-        System.out.println("---deletedById---");
-        iMsI.deleteById(1);
-        iMsI.deleteById(30);
+        System.out.println("---deletedById--ok-");
+        iMsI.deleteById(id3);
+        iMsI.deleteById(id4);
+        for (Food o : iMsI.getProducts()) {
+            System.out.println(o);
+        }
 
-        System.out.println("---get---");
-        iMsI.get(1);
-        iMsI.get(20);
+        System.out.println("---get--ok-");
+        iMsI.get(id);
+        iMsI.get(id2);
+        System.out.println(id);
+        System.out.println(id2);
 
 
         System.out.println("--getPrice---");
