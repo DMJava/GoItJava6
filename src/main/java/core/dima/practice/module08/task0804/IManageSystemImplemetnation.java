@@ -1,5 +1,6 @@
 package core.dima.practice.module08.task0804;
 
+import core.dima.practice.module03.homework0303.CollegeStudent;
 import core.dima.practice.module08.task0802.Food;
 import core.dima.practice.module08.task0803.IManageSystem;
 
@@ -85,8 +86,14 @@ public final class IManageSystemImplemetnation<T> implements IManageSystem<Food>
     @Override
     public void printProductsSortedByPrice() {
         List<Map.Entry<Food, Double>> list = new ArrayList<Map.Entry<Food, Double>>(database.entrySet());
-
-
+        Collections.sort(list, new Comparator<Map.Entry<Food, Double>>() {
+            @Override
+            public int compare(Map.Entry<Food, Double> o1, Map.Entry<Food, Double> o2) {
+                return o2.getValue().compareTo(o2.getValue());
+            }
+        });
+        for (Map.Entry<Food,Double> o : list) {
+            System.out.println(o);
+        }
     }
-
 }

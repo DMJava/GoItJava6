@@ -65,7 +65,8 @@ public class Main {
         System.out.println("--sortedByName--");
         iMsI.printProductsSortedByName();
 
-
+        System.out.println("--sortedByPrice--");
+        iMsI.printProductsSortedByPrice();
 
     }
 }
