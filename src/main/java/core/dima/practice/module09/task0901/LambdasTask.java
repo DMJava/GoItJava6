@@ -1,6 +1,5 @@
 package core.dima.practice.module09.task0901;
 
-
 import core.dima.practice.module07.task0701.Currency;
 import core.dima.practice.module07.task0701.Order;
 import core.dima.practice.module07.task0701.User;
@@ -39,5 +38,47 @@ public class LambdasTask {
 
         System.out.println("---- список за ценой заказа по убыванию ---");
 
+        System.out.println("--- список за ценой заказа по возрастанию и за городом пользователя ---");
+
+        System.out.println("---- список за наименованием товара, идентификатором заказа, и городом пользователя---");
+
+    }
+
+    public void PriceDown(List<Order> orders) {
+        Collections.sort(orders, (Comparator<Order>) (o1, o2) -> {
+            return o2.getPrice() - o1.getPrice();
+        });
+        for (Order o : orders) {
+            System.out.println(o);
+        }
+    }
+
+    public void PriceUpAndCity(List<Order> orders) {
+        Collections.sort(orders, (Comparator<Order>) (o1, o2) -> {
+            int i = o2.getUser().getCity().compareTo(o1.getUser().getCity());
+            if (i == 0) {
+                i = o1.getPrice() - o2.getPrice();
+            }
+            return i;
+        });
+        for (Order o : orders) {
+            System.out.println(o);
+        }
+    }
+
+    public void itemNameIdAndUserCity(List<Order> orders) {
+        Collections.sort(orders, (Comparator<Order>) (o1, o2) -> {
+            int i = o2.getUser().getCity().compareTo(o1.getUser().getCity());
+            if (i == 0) {
+                i = o1.getItemName().compareTo(o2.getItemName());
+            }
+            if (i == 0 ){
+                i = o1.getShopIdentificator().compareTo(o2.getShopIdentificator());
+            }
+            return i;
+        });
+        for (Order o : orders) {
+            System.out.println(o);
+        }
     }
 }

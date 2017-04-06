@@ -17,6 +17,7 @@ public class Main {
     public static void main(String[] args) {
 
         IManageSystemImplemetnation<Food> iMsI = new IManageSystemImplemetnation<Food>();
+
         iMsI.save(new Food("Apple", UKRAINE, 30));
         iMsI.save(new Food("Milk", UKRAINE, 50));
         iMsI.save(new Food("Meat", UKRAINE, 60));
@@ -25,12 +26,14 @@ public class Main {
         iMsI.save(new Food("Rice", CHINA, 200));
         iMsI.save(new Food("Hijashi", CHINA, 200));
 
-        iMsI.save(new Food("Mango", BRAZIL, 20));
-        iMsI.save(new Food("Meat", ITALY, 30));
-        iMsI.save(new Food("Eggs", UKRAINE, 20));
-        iMsI.save(new Food("Pipe", USA, 20));
-        iMsI.save(new Food("Melon", CHINA, 20));
-        iMsI.save(new Food("Chockolate", ITALY, 1000));
+        System.out.println("---------11111---");
+        iMsI.save(new Food("Apple", UKRAINE, 30), 10.0);
+        iMsI.save(new Food("Mango", BRAZIL, 20), 20.0);
+        iMsI.save(new Food("Meat", ITALY, 30), 30.0);
+        iMsI.save(new Food("Eggs", UKRAINE, 20),35.0);
+        iMsI.save(new Food("Pipe", USA, 20),40.0);
+        iMsI.save(new Food("Melon", CHINA, 20), 50.0);
+        iMsI.save(new Food("Chockolate", ITALY, 1000), 505.0);
 
         for (Food o : iMsI.getProducts()) {
             System.out.println(o);

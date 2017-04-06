@@ -1,6 +1,5 @@
 package core.dima.practice.module08.task0804;
 
-import core.dima.practice.module03.homework0303.CollegeStudent;
 import core.dima.practice.module08.task0802.Food;
 import core.dima.practice.module08.task0803.IManageSystem;
 
@@ -10,7 +9,7 @@ import java.util.*;
 
 public final class IManageSystemImplemetnation<T> implements IManageSystem<Food> {
 
-    final static double DOUBLE = 0.0;
+    public final static double DEFAULT_PRICE = 0.0;
 
     private Map<Food, Double> database = new HashMap<Food, Double>();
 
@@ -22,7 +21,7 @@ public final class IManageSystemImplemetnation<T> implements IManageSystem<Food>
 
     @Override
     public Food save(Food obj) {
-        database.put(obj, DOUBLE);
+        database.put(obj, DEFAULT_PRICE);
         return obj;
     }
 
@@ -89,7 +88,7 @@ public final class IManageSystemImplemetnation<T> implements IManageSystem<Food>
         Collections.sort(list, new Comparator<Map.Entry<Food, Double>>() {
             @Override
             public int compare(Map.Entry<Food, Double> o1, Map.Entry<Food, Double> o2) {
-                return o2.getValue().compareTo(o2.getValue());
+                return o2.getValue().compareTo(o1.getValue());
             }
         });
         for (Map.Entry<Food,Double> o : list) {
