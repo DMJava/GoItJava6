@@ -68,7 +68,7 @@ public class Main {
 
 
         System.out.println("--getPrice---");
-        System.out.println(iMsI.getPrice(new Food("Melon", CHINA, 20)));
+        System.out.println(iMsI.getPrice(new Food("Pipe", USA, 20)));
 
 
         System.out.println("---getProducts---ok-");
