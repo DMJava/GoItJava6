@@ -1,5 +1,6 @@
 package core.dima.practice.module09.task0901;
 
+import com.sun.org.apache.xpath.internal.operations.Or;
 import core.dima.practice.module07.task0701.Currency;
 import core.dima.practice.module07.task0701.Order;
 import core.dima.practice.module07.task0701.User;
@@ -12,6 +13,7 @@ import java.util.List;
 public class LambdasTask {
 
     public static void main(String[] args) {
+
         List<User> users = new ArrayList<User>();
         User user = new User(7898, "Ivan", "Petrov", "Kiev", 20000);
         User user2 = new User(9865, "Vita", "Sidorov", "Kharkov", 10000);
@@ -26,53 +28,41 @@ public class LambdasTask {
 
         List<Order> orders = new ArrayList<Order>();
         orders.add(new Order(4565, 1500, Currency.USD, "Iphone", "AAA", user));
-        orders.add(new Order(4565, 1700, Currency.UAH, "Samsung", "BBB", user2));
-        orders.add(new Order(4565, 110, Currency.UAH, "Delf", "CCC", user3));
-        orders.add(new Order(4565, 900, Currency.USD, "Xaomi", "DDD", user4));
-        orders.add(new Order(4565, 1500, Currency.USD, "Dell", "EEE", user5));
-        orders.add(new Order(4565, 900, Currency.USD, "Acer", "ZZZ", user6));
-        orders.add(new Order(4565, 800, Currency.USD, "Nord", "GGG", user7));
-        orders.add(new Order(4565, 2000, Currency.UAH, "Sony", "HHH", user8));
-        orders.add(new Order(4565, 3000, Currency.UAH, "Davos", "JJJ", user9));
-        orders.add(new Order(4565, 2100, Currency.USD, "BMW", "ZZZ", user10));
-
-        System.out.println("---- список за ценой заказа по убыванию ---");
+        orders.add(new Order(4646, 1700, Currency.UAH, "Samsung", "BBB", user2));
+        orders.add(new Order(4747, 110, Currency.UAH, "Delf", "CCC", user3));
+        orders.add(new Order(4848, 900, Currency.USD, "Xaomi", "DDD", user4));
+        orders.add(new Order(4949, 1500, Currency.USD, "Dell", "EEE", user5));
+        orders.add(new Order(4444, 900, Currency.USD, "Acer", "ZZZ", user6));
+        orders.add(new Order(4433, 800, Currency.USD, "Nord", "GGG", user7));
+        orders.add(new Order(4563, 2000, Currency.UAH, "Sony", "HHH", user8));
+        orders.add(new Order(4646, 1700, Currency.UAH, "Samsung", "BBB", user2));
+        orders.add(new Order(4646, 1700, Currency.UAH, "Samsung", "BBB", user2));
 
         System.out.println("--- список за ценой заказа по возрастанию и за городом пользователя ---");
 
         System.out.println("---- список за наименованием товара, идентификатором заказа, и городом пользователя---");
 
+
     }
 
     public void PriceDown(List<Order> orders) {
-        Collections.sort(orders, (Comparator<Order>) (o1, o2) -> {
-            return o2.getPrice() - o1.getPrice();
-        });
-        for (Order o : orders) {
-            System.out.println(o);
-        }
+        orders.sort(Comparator.comparing(Order::getPrice).reversed());
+        System.out.println(orders);
     }
 
-    public void PriceUpAndCity(List<Order> orders) {
-        Collections.sort(orders, (Comparator<Order>) (o1, o2) -> {
-            int i = o2.getUser().getCity().compareTo(o1.getUser().getCity());
-            if (i == 0) {
-                i = o1.getPrice() - o2.getPrice();
-            }
-            return i;
-        });
-        for (Order o : orders) {
-            System.out.println(o);
-        }
+    public void PriceUpAndCity(List<Order> orders, List<User> users) {
+        orders.sort(Comparator.comparing(Order::getPrice));
+        users.sort(Comparator.comparing(User::getCity));
+        System.out.println(orders);
     }
 
     public void itemNameIdAndUserCity(List<Order> orders) {
-        Collections.sort(orders, (Comparator<Order>) (o1, o2) -> {
+        Collections.sort(orders, (o1, o2) -> {
             int i = o2.getUser().getCity().compareTo(o1.getUser().getCity());
             if (i == 0) {
                 i = o1.getItemName().compareTo(o2.getItemName());
             }
-            if (i == 0 ){
+            if (i == 0) {
                 i = o1.getShopIdentificator().compareTo(o2.getShopIdentificator());
             }
             return i;
@@ -81,4 +71,38 @@ public class LambdasTask {
             System.out.println(o);
         }
     }
+
+    public void deleteSameOrder(List<Order> orders) {
+        orders.stream().filter(o -> o.equals(o.getId()));
+        {
+            orders.remove(orders);
+        }
+        System.out.println(orders);
+    }
+
+    public void deletePriceLess1500(List<Order> orders) {
+        orders.stream().filter(order -> order.getPrice() > 1500).forEach(System.out::println);
+    }
+
+    public void separateOnListUAHandListUSD(List<Order> orders) {
+
+    }
+
+    public void listsOfUniqueUsersCity(List<Order> orders) {
+    }
+
+    public void setWithPetrovSurname(List<Order> orders) {
+    }
+
+    public void deleteOrdersWithUSD(List<Order> orders) {
+    }
 }
+//        -удалите дублированные данные со списка
+//        -удалите объекты, где цена меньше 1500
+
+
+//        -разделите список на 2 списка - заказы в долларах и в гривнах
+//        -разделите список на столько списков, сколько уникальных городов в User
+//
+//        -проверьте, содержит ли сет заказ, где фамилия пользователя - “Petrov”
+//        -удалите заказы в USD

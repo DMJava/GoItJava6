@@ -22,6 +22,10 @@ public class Order{
         this.user = user;
     }
 
+    public long getId() {
+        return id;
+    }
+
     public int getPrice() {
         return price;
     }
