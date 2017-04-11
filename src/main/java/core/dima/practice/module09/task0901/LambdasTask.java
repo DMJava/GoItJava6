@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class LambdasTask {
 
@@ -57,27 +59,29 @@ public class LambdasTask {
     }
 
     public void itemNameIdAndUserCity(List<Order> orders) {
-        Collections.sort(orders, (o1, o2) -> {
-            int i = o2.getUser().getCity().compareTo(o1.getUser().getCity());
-            if (i == 0) {
-                i = o1.getItemName().compareTo(o2.getItemName());
-            }
-            if (i == 0) {
-                i = o1.getShopIdentificator().compareTo(o2.getShopIdentificator());
-            }
-            return i;
-        });
-        for (Order o : orders) {
-            System.out.println(o);
-        }
+        List<Order> byCityAndNAme = orders.stream().sorted(((o1, o2) -> o1.getUser().getCity() != o2.getUser().getCity() ?
+                o1.getUser().getCity().compareTo(o2.getUser().getCity()) : o1.getItemName().compareTo(o2.getItemName()))).collect(Collectors.toList());
+        byCityAndNAme = orders.stream().sorted(((o1, o2) -> o1.getShopIdentificator().compareTo(o2.getShopIdentificator()))).collect(Collectors.toList());
+        System.out.println(byCityAndNAme);
+
+//        Collections.sort(orders, (o1, o2) -> {
+//            int i = o2.getUser().getCity().compareTo(o1.getUser().getCity());
+//            if (i == 0) {
+//                i = o1.getItemName().compareTo(o2.getItemName());
+//            }
+//            if (i == 0) {
+//                i = o1.getShopIdentificator().compareTo(o2.getShopIdentificator());
+//            }
+//            return i;
+//        });
+//        for (Order o : orders) {
+//            System.out.println(o);
+//        }
     }
 
     public void deleteSameOrder(List<Order> orders) {
-        orders.stream().filter(o -> o.equals(o.getId()));
-        {
-            orders.remove(orders);
-        }
-        System.out.println(orders);
+        List<Order> list = orders.stream().distinct().collect(Collectors.toList());
+        System.out.println(list);
     }
 
     public void deletePriceLess1500(List<Order> orders) {
@@ -85,24 +89,39 @@ public class LambdasTask {
     }
 
     public void separateOnListUAHandListUSD(List<Order> orders) {
-
+        List<Order> orderList1 = orders.stream().filter(order -> order.equals(Currency.UAH)).collect(Collectors.toList());
+        List<Order> orderList2 = orders.stream().filter(order -> order.equals(Currency.USD)).collect(Collectors.toList());
+        System.out.println(orderList1);
+        System.out.println(orderList2);
     }
 
     public void listsOfUniqueUsersCity(List<Order> orders) {
+//        orders.stream().filter(order -> order.getUser().getCity().contains("Kiev")).collect(Collectors.toList());
+//        orders.stream().filter(order -> order.getUser().getCity().contains("Lvov")).collect(Collectors.toList());
+//        orders.stream().filter(order -> order.getUser().getCity().contains("Kharkov")).collect(Collectors.toList());
+//        orders.stream().filter(order -> order.getUser().getCity().contains("Sumy")).collect(Collectors.toList());
+//        System.out.println(orders);
+
+        orders.stream().collect(Collectors.groupingBy(o -> o.getUser().getCity().contains("Kiev")));
+        orders.stream().collect(Collectors.groupingBy(o -> o.getUser().getCity().contains("Sumy")));
+        orders.stream().collect(Collectors.groupingBy(o -> o.getUser().getCity().contains("Kharkov")));
+        orders.stream().collect(Collectors.groupingBy(o -> o.getUser().getCity().contains("Lvov")));
+        System.out.println(orders);
     }
 
     public void setWithPetrovSurname(List<Order> orders) {
+        orders.stream().allMatch("Petrov"::equals);
+        System.out.println(orders);
     }
 
     public void deleteOrdersWithUSD(List<Order> orders) {
+        orders.stream().filter(order -> order.equals(Currency.UAH)).collect(Collectors.toList());
+        separateOnListUAHandListUSD(orders);
     }
 }
 //        -удалите дублированные данные со списка
 //        -удалите объекты, где цена меньше 1500
-
-
-//        -разделите список на 2 списка - заказы в долларах и в гривнах
-//        -разделите список на столько списков, сколько уникальных городов в User
-//
 //        -проверьте, содержит ли сет заказ, где фамилия пользователя - “Petrov”
+//        -разделите список на 2 списка - заказы в долларах и в гривнах
 //        -удалите заказы в USD
+//        -разделите список на столько списков, сколько уникальных городов в User
