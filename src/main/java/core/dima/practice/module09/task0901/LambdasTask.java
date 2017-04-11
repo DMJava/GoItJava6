@@ -96,10 +96,10 @@ public class LambdasTask {
     }
 
     public void listsOfUniqueUsersCity(List<Order> orders) {
-        orders.stream().collect(Collectors.groupingBy(o -> o.getUser().getCity().contains("Kiev")));
-        orders.stream().collect(Collectors.groupingBy(o -> o.getUser().getCity().contains("Sumy")));
-        orders.stream().collect(Collectors.groupingBy(o -> o.getUser().getCity().contains("Kharkov")));
-        orders.stream().collect(Collectors.groupingBy(o -> o.getUser().getCity().contains("Lvov")));
+        orders.stream().collect(Collectors.groupingBy(o -> o.getUser().getCity().equals("Kiev")));
+        orders.stream().collect(Collectors.groupingBy(o -> o.getUser().getCity().equals("Sumy")));
+        orders.stream().collect(Collectors.groupingBy(o -> o.getUser().getCity().equals("Kharkov")));
+        orders.stream().collect(Collectors.groupingBy(o -> o.getUser().getCity().equals("Lvov")));
         System.out.println(orders);
     }
 
