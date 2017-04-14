@@ -56,5 +56,6 @@ public class Order{
                 ", shopIdentificator='" + shopIdentificator + '\'' +
                 ", user=" + user +
                 '}';
+
     }
 }
