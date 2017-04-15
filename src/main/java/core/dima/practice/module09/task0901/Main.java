@@ -37,41 +37,40 @@ public class Main {
         orders.add(new Order(4646, 1700, Currency.UAH, "Samsung", "BBB", user2));
 
 
-//        System.out.println("--PriceDown---");
-//        lambdasTask.PriceDown(orders);
-//        for (Order o : orders) {
-//            System.out.println(o);
-//        }
-//
-//        System.out.println("---PriceUpAndCity---");
-//        lambdasTask.PriceUpAndCity(orders, users);
-//        for (Order o : orders) {
-//            System.out.println(o);
-//        }
-//
-//        System.out.println("---itemNameIdAndUserCity---");
-//        lambdasTask.itemNameIdAndUserCity(orders);
-//        for (Order o : orders) {
-//            System.out.println(o);
-//        }
-//
-//        System.out.println("---deleteSameOrder---");
-//        lambdasTask.deleteSameOrder(orders);
+        System.out.println("--PriceDown---");
+        lambdasTask.PriceDown(orders);
+        for (Order o : orders) {
+            System.out.println(o);
+        }
+
+        System.out.println("---PriceUpAndCity---");
+        lambdasTask.PriceUpAndCity(orders, users);
+        for (Order o : orders) {
+            System.out.println(o);
+        }
+
+        System.out.println("---itemNameIdAndUserCity---");
+        lambdasTask.itemNameIdAndUserCity(orders);
+        for (Order o : orders) {
+            System.out.println(o);
+        }
+
+        System.out.println("---deleteSameOrder---");
+        lambdasTask.deleteSameOrder(orders);
 
 
-//        System.out.println("---deletePriceLess1500---");
-//        lambdasTask.deletePriceLess1500(orders);
+        System.out.println("---deletePriceLess1500---");
+        lambdasTask.deletePriceLess1500(orders);
 
-//        System.out.println("---separateOnListUAHandListUSD---");
-//        lambdasTask.separateOnListUAHandListUSD(orders);
+        System.out.println("---separateOnListUAHandListUSD---");
+        lambdasTask.separateOnListUAHandListUSD(orders);
 
-//
-//        System.out.println("---listsOfUniqueUsersCity---");
-//        lambdasTask.listsOfUniqueUsersCity(orders);
-//
-//       System.out.println("---setWithPetrovSurname---");
-//        lambdasTask.setWithPetrovSurname(orders, users);
-//
+
+        System.out.println("---listsOfUniqueUsersCity---");
+        lambdasTask.listsOfUniqueUsersCity(orders);
+
+        System.out.println("---setWithPetrovSurname---");
+        lambdasTask.setWithPetrovSurname(orders, users);
 
         System.out.println("---deleteOrdersWithUSD---");
         lambdasTask.deleteOrdersWithUSD(orders);

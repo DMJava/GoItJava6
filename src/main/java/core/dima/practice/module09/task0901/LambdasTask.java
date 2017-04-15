@@ -77,9 +77,6 @@ public class LambdasTask {
     }
 
     public void deleteOrdersWithUSD(List<Order> orders) {
-        orders.stream().filter(order -> order.getCurrency().equals(Currency.USD)).collect(Collectors.toList());
-
-        orders.removeAll(orders);
-        orders.forEach(System.out::println);
+        orders.stream().filter(order -> order.getCurrency().equals(Currency.UAH)).forEach(System.out::println);
     }
 }
