@@ -36,7 +36,6 @@ public class Main {
         orders.add(new Order(4646, 1700, Currency.UAH, "Samsung", "BBB", user2));
         orders.add(new Order(4646, 1700, Currency.UAH, "Samsung", "BBB", user2));
 
-
         System.out.println("--PriceDown---");
         lambdasTask.PriceDown(orders);
         for (Order o : orders) {
@@ -74,6 +73,5 @@ public class Main {
 
         System.out.println("---deleteOrdersWithUSD---");
         lambdasTask.deleteOrdersWithUSD(orders);
-
     }
 }
