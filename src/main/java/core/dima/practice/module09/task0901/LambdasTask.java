@@ -53,9 +53,7 @@ public class LambdasTask {
     }
 
     public void deleteSameOrder(List<Order> orders) {
-        orders.stream().distinct().collect(Collectors.toList()).remove(orders);
-//                forEach(System.out::println);
-
+        orders.stream().distinct().collect(Collectors.toList());
     }
 
     public void deletePriceLess1500(List<Order> orders) {
@@ -79,8 +77,7 @@ public class LambdasTask {
     }
 
     public void deleteOrdersWithUSD(List<Order> orders) {
-        orders.stream().filter(order -> order.equals(Currency.UAH)).collect(Collectors.toList());
-        separateOnListUAHandListUSD(orders);
+        orders.stream().filter(order -> order.equals(Currency.UAH)).collect(Collectors.toList()).remove(Currency.USD);
     }
 }
 //        -удалите дублированные данные со списка

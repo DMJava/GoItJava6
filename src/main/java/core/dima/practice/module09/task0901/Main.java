@@ -54,20 +54,20 @@ public class Main {
 //            System.out.println(o);
 //        }
 //
-//   --     System.out.println("---deleteSameOrder---");
-//        lambdasTask.deleteSameOrder(orders);
-//        for (Order o : orders) {
-//            System.out.println(o);
-//        }
+        System.out.println("---deleteSameOrder---");
+        lambdasTask.deleteSameOrder(orders);
+        for (Order o : orders) {
+            System.out.println(o);
+        }
 
 //        System.out.println("---deletePriceLess1500---");
 //        lambdasTask.deletePriceLess1500(orders);
 
-        System.out.println("---separateOnListUAHandListUSD---");
-        lambdasTask.separateOnListUAHandListUSD(orders);
-        for (Order o : orders){
-            System.out.println(o);
-        }
+//    --    System.out.println("---separateOnListUAHandListUSD---");
+//        lambdasTask.separateOnListUAHandListUSD(orders);
+//        for (Order o : orders){
+//            System.out.println(o);
+//        }
 
 //  --      System.out.println("---listsOfUniqueUsersCity---");
 //        lambdasTask.listsOfUniqueUsersCity(orders);
