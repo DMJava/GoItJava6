@@ -35,7 +35,8 @@ public class Main {
         orders.add(new Order(4563, 2000, Currency.UAH, "Sony", "HHH", user8));
         orders.add(new Order(4646, 1700, Currency.UAH, "Samsung", "BBB", user2));
         orders.add(new Order(4646, 1700, Currency.UAH, "Samsung", "BBB", user2));
-//
+
+
 //        System.out.println("--PriceDown---");
 //        lambdasTask.PriceDown(orders);
 //        for (Order o : orders) {
@@ -54,36 +55,26 @@ public class Main {
 //            System.out.println(o);
 //        }
 //
-        System.out.println("---deleteSameOrder---");
-        lambdasTask.deleteSameOrder(orders);
-        for (Order o : orders) {
-            System.out.println(o);
-        }
+//        System.out.println("---deleteSameOrder---");
+//        lambdasTask.deleteSameOrder(orders);
+
 
 //        System.out.println("---deletePriceLess1500---");
 //        lambdasTask.deletePriceLess1500(orders);
 
-//    --    System.out.println("---separateOnListUAHandListUSD---");
+//        System.out.println("---separateOnListUAHandListUSD---");
 //        lambdasTask.separateOnListUAHandListUSD(orders);
-//        for (Order o : orders){
-//            System.out.println(o);
-//        }
 
-//  --      System.out.println("---listsOfUniqueUsersCity---");
+//
+//        System.out.println("---listsOfUniqueUsersCity---");
 //        lambdasTask.listsOfUniqueUsersCity(orders);
-//        for (Order o:orders) {
-//            System.out.println(o);
-//        }
-//    --    System.out.println("---setWithPetrovSurname---");
+//
+//       System.out.println("---setWithPetrovSurname---");
 //        lambdasTask.setWithPetrovSurname(orders, users);
-//        for (Order o : orders){
-//            System.out.println(o);
-//        }
+//
 
-// --       System.out.println("---deleteOrdersWithUSD---");
-//        lambdasTask.deleteOrdersWithUSD(orders);
-//        for (Order o : orders){
-//            System.out.println(o);
-//        }
+        System.out.println("---deleteOrdersWithUSD---");
+        lambdasTask.deleteOrdersWithUSD(orders);
+
     }
 }

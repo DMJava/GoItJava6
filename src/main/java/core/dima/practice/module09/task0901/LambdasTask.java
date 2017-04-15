@@ -1,6 +1,7 @@
 package core.dima.practice.module09.task0901;
 
 import com.sun.org.apache.xml.internal.serializer.utils.SystemIDResolver;
+import com.sun.org.apache.xml.internal.utils.ListingErrorHandler;
 import com.sun.org.apache.xpath.internal.operations.Or;
 import core.dima.practice.module07.task0701.Currency;
 import core.dima.practice.module07.task0701.Order;
@@ -37,7 +38,6 @@ public class LambdasTask {
         orders.add(new Order(4563, 2000, Currency.UAH, "Sony", "HHH", user8));
         orders.add(new Order(4646, 1700, Currency.UAH, "Samsung", "BBB", user2));
         orders.add(new Order(4646, 1700, Currency.UAH, "Samsung", "BBB", user2));
-
     }
 
     public void PriceDown(List<Order> orders) {
@@ -53,7 +53,7 @@ public class LambdasTask {
     }
 
     public void deleteSameOrder(List<Order> orders) {
-        orders.stream().distinct().collect(Collectors.toList());
+        orders.stream().distinct().collect(Collectors.toList()).forEach(System.out::println);
     }
 
     public void deletePriceLess1500(List<Order> orders) {
@@ -61,26 +61,25 @@ public class LambdasTask {
     }
 
     public void separateOnListUAHandListUSD(List<Order> orders) {
-      orders.stream().collect(Collectors.partitioningBy(o -> o.getCurrency().equals(Currency.USD)));
+        orders.stream().filter(order -> order.getCurrency().equals(Currency.UAH)).forEach(System.out::println);
+        orders.stream().filter(order -> order.getCurrency().equals(Currency.USD)).forEach(System.out::println);
     }
 
     public void listsOfUniqueUsersCity(List<Order> orders) {
-
-//        orders.stream().collect(Collectors.groupingBy(o -> o.getUser().getCity().equals("Kiev")));
-//        orders.stream().collect(Collectors.groupingBy(o -> o.getUser().getCity().equals("Sumy")));
-//        orders.stream().collect(Collectors.groupingBy(o -> o.getUser().getCity().equals("Kharkov")));
-//        orders.stream().collect(Collectors.groupingBy(o -> o.getUser().getCity().equals("Lvov")));
+        orders.stream().filter(order -> order.getUser().getCity().equals("Kiev")).forEach(System.out::println);
+        orders.stream().filter(order -> order.getUser().getCity().equals("Kharkov")).forEach(System.out::println);
+        orders.stream().filter(order -> order.getUser().getCity().equals("Lvov")).forEach(System.out::println);
+        orders.stream().filter(order -> order.getUser().getCity().equals("Sumy")).forEach(System.out::println);
     }
 
     public void setWithPetrovSurname(List<Order> orders, List<User> users) {
-        orders.stream().allMatch("Petrov"::equals);
+        orders.stream().filter(order -> order.getUser().getLastName().equals("Petrov")).forEach(System.out::println);
     }
 
     public void deleteOrdersWithUSD(List<Order> orders) {
-        orders.stream().filter(order -> order.equals(Currency.UAH)).collect(Collectors.toList()).remove(Currency.USD);
+        orders.stream().filter(order -> order.getCurrency().equals(Currency.USD)).collect(Collectors.toList());
+
+        orders.removeAll(orders);
+        orders.forEach(System.out::println);
     }
 }
-//        -удалите дублированные данные со списка
-//        -удалите объекты, где цена меньше 1500
-//         -удалите заказы в USD
-//        -разделите список на столько списков, сколько уникальных городов в User
