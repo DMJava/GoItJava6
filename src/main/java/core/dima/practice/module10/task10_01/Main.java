@@ -5,7 +5,7 @@ public class Main {
         try {
             throw new Exception("ExcepExcep");
         } catch (Exception e) {
-            System.out.println("This is Exception");
+            System.out.println(e.getMessage());
         } finally {
             System.out.println("Its finally block");
         }
