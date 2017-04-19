@@ -1,16 +1,22 @@
 package core.dima.practice.module10.task10_03;
 
-public class Task03 {
-    Task03 task = new Task03();
+import org.omg.CORBA.ObjectHelper;
 
-    public void Exep(){
-        if (task == null){
+public class Task03 {
+    Object obj = null;
+
+    public static void Exep(Object obj) {
+        if (obj == null) {
             try {
                 throw new NullPointerException(" Its null !!!");
-            } catch (NullPointerException e){
+            } catch (NullPointerException e) {
                 System.out.println("Catch Exept");
             }
         }
+    }
+
+    public static void main(String[] args) {
+        Exep(null);
     }
 }
 
