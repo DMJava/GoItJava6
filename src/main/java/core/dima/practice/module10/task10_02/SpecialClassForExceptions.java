@@ -6,16 +6,16 @@ public class SpecialClassForExceptions extends Exception {
         super(message);
     }
 
-    public static void toGo(String message) {
-        try {
-            throw new RuntimeException(message);
-        } catch (RuntimeException e) {
-            System.out.println(message);
-        }
+    public static void toGo(String message)  {
+        System.out.println(message);
     }
 
     public static void main(String[] args) {
-        toGo("111");
+        try {
+            toGo("111");
+        } catch (Exception e) {
+            System.out.println("222");
+        }
     }
 }
 

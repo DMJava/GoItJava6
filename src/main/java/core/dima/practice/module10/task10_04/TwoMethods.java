@@ -4,18 +4,16 @@ public class TwoMethods {
 
     public static void f() {
         try {
-             g();
-        } catch (OutOfMemoryError e){
-            System.out.println(22222);;
+            g();
+        } catch (RuntimeException e) {
+            System.out.println("111");
+        } catch (Exception f) {
+            System.out.println("222");
         }
     }
 
     public static void g() {
-        try {
-            throw new RuntimeException("oneoneone");
-        } finally {
-            System.out.println("eto finally");
-        }
+        throw new RuntimeException();
     }
 
     public static void main(String[] args) {
@@ -25,5 +23,6 @@ public class TwoMethods {
 
 //    Создайте класс с двумя методами f() и g().
 //    В g() киньте (throw) исключение нового типа, который вы определили.
+
 //    В f() вызовите g(), поймайте его исключение и в блоке catch киньте другое исключение (другого типа, который вы определили).
 //    Протестируйте свой код в main().
