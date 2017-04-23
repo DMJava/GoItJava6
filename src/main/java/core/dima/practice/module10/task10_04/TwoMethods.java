@@ -2,22 +2,20 @@ package core.dima.practice.module10.task10_04;
 
 public class TwoMethods {
 
-    public static void f() {
+    public static void f() throws Exception {
         try {
             g();
         } catch (RuntimeException e) {
             System.out.println("111");
-        } catch (Exception f) {
-            System.out.println("222");
+//            throw new Exception();
         }
     }
-
     public static void g() {
         throw new RuntimeException();
     }
 
-    public static void main(String[] args) {
-        f();
+    public static void main(String[] args) throws Exception{
+      f();
     }
 }
 

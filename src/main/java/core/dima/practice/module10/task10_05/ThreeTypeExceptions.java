@@ -7,6 +7,7 @@ import java.io.IOException;
 
 public class ThreeTypeExceptions {
 
+
     public static void threeExceptions() throws RuntimeException, OutOfMemoryError, IOException {
         throw new IOException();
     }
@@ -14,7 +15,7 @@ public class ThreeTypeExceptions {
     public static void main(String[] args) {
         try {
             threeExceptions();
-        } catch (Exception e) {
+        } catch (RuntimeException | IOException | OutOfMemoryError e) {
             System.out.println("777");
         }
     }

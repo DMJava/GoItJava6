@@ -2,19 +2,22 @@ package core.dima.practice.module10.task10_02;
 
 public class SpecialClassForExceptions extends Exception {
 
+    private String message;
+
     public SpecialClassForExceptions(String message) {
-        super(message);
+        this.message = message;
     }
 
-    public static void toGo(String message)  {
+    public void toGo() {
         System.out.println(message);
     }
 
     public static void main(String[] args) {
         try {
-            toGo("111");
-        } catch (Exception e) {
-            System.out.println("222");
+            throw new SpecialClassForExceptions("111");
+        } catch (SpecialClassForExceptions e) {
+            e.toGo();
+            System.out.println("22");
         }
     }
 }

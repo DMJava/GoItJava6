@@ -2,16 +2,13 @@ package core.dima.practice.module10.task10_03;
 
 public class Task03 {
 
-    public void Exep(Object obj) {
-    }
-
     public static void main(String[] args) {
-        Task03 obj = null;
+        String s = null;
         try {
-            obj.Exep(null);
+            s.length();
         } catch (NullPointerException e) {
-            System.out.println("111");
-        }
+            e.printStackTrace();
+            System.out.println("прога упала");        }
     }
 }
 
