@@ -25,16 +25,17 @@ public class task_03 {
     }
 
     private static String readFile() throws IOException {
-        Scanner sc = new Scanner(Paths.get("file1"));
+        Scanner sc = new Scanner(Paths.get("file3"));
         String map = sc.useDelimiter("file1").next();
         return map;
     }
 
     private static void fileContentMerger(Map<String, String> map) throws IOException {
-        File file = new File("file1");
+        File file = new File("file3");
         FileWriter fr = null;
         fr = new FileWriter(file, true);
         fr.write(String.valueOf(map));
+        fr.flush();
     }
 }
 

@@ -8,7 +8,7 @@ import java.util.*;
 
 public class task01 {
 
-    public static File replacer (Map<String, String> map) throws IOException {
+    public static String replacer (Map<String, String> map) throws IOException {
 
         StringBuilder sb = new StringBuilder();
         File file = new File("file1");
@@ -25,7 +25,7 @@ public class task01 {
         for (Map.Entry<String, String> sSE : map.entrySet()) {
             string = string.replaceAll(sSE.getKey(), sSE.getValue());
         }
-        return null;
+        return string;
     }
 
     public static void main(String[] args) throws IOException {
